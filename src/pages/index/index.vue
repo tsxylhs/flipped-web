@@ -1,5 +1,6 @@
 <template >
   <view class="container">
+  
     <!--轮播图-->
     <uni-swiper-dot class="uni-swiper-dot-box" @clickItem=clickItem :info="info" :current="current" :mode="mode"
       :dots-styles="dotsStyles" field="content">
@@ -14,31 +15,37 @@
 
     <swiper class="swiper-box1" :indicator-dots="false">
       <swiper-item v-for="(topic, index) in topics">
-        <uni-grid :showBorder="false" :column="4" @change="change">
-          <uni-grid-item class="grid-item" v-for="(item, index) in topic" :index="index" :key="index">
-            <view  >
-            <view>
-              <uni-badge :text="10" :type="error" />
-            </view>
-           
-            <text class="text">{{ item.topicName }}</text>
+        <uni-grid :highlight="false" :showBorder="false" :column="5"  @change="change">
+          <uni-grid-item   v-for="(item, index) in topic" :index="index" :key="index">
+            
+            <view >
+              <cover-image class="grid-item-image" mode="aspectFill" :src="item.url"  >
+              </cover-image>
           </view>
+          <view><text class="text">{{ item.topicName }}</text></view>
           </uni-grid-item>
         </uni-grid>
       </swiper-item>
     </swiper>
-    <uni-grid :showBorder="false" :column="2" @change="change">
-      <uni-grid-item class="grid-item-box" v-for="(item, index) in list" :index="index" :key="index">
-          <view>
-            <text class="text">{{ item.text }}</text>
-          </view>
+    <uni-grid :highlight="false"  :showBorder="false" :column="2" @change="change">
+      <uni-grid-item  v-for="(item, index) in list" :index="index" :key="index">
+        <view class="grid-item-box">
+  
+          <cover-image  class="image-radius" :src="item.url" mode="aspectFill" />
+    
+        <view class="text-style">{{ item.text }}</view>
+     
+      
+        </view>
       </uni-grid-item>
     </uni-grid>
 
     <!--悬浮框--->
     <uni-fab ref="fab" :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical"
       :direction="direction" @trigger="trigger" @fabClick="fabClick"></uni-fab>
+    
   </view>
+  
 </template>
 
 <script>
@@ -46,6 +53,7 @@ import { Warning } from 'postcss'
 
 export default {
   data() {
+
     return {
       //轮播图
       mode: 'nav',
@@ -111,23 +119,27 @@ export default {
       }],
 
       topics: [[{
-        url: "/static/add.png",
+        url: "/static/xiangcun.jpg",
         id: "1",
-        topicName: "话题1"
+        topicName: "跨年计划"
       }, {
-        url: "/static/add.png",
+        url: "/static/xiaoyuan.jpg",
         id: "2"
         ,
         topicName: "话题2"
       }, {
-        url: "/static/add.png",
+        url: "/static/xiaoyuan.jpg",
         id: "3"
         ,
         topicName: "话题3"
       }, {
-        url: "/static/add.png", id: "4"
-        ,
+        url: "/static/xiaoyuan.jpg",
+        
         topicName: "话题4"
+      }, {
+         url: "/static/xiaoyuan.jpg",
+        
+        topicName: "话题5"
       }],
       [{
         url: "/static/add.png",
@@ -144,21 +156,25 @@ export default {
       }, {
         url: "/static/add.png", id: "4",
         topicName: ""
+      }, {
+        url: "/static/add.png", id: "4"
+        ,
+        topicName: "话题5"
       }]
       ],
       //grid
       list: [{
-        url: "/static/peng.png",
-        text:"怦"
+        url: "/static/xiaoyuan.jpg",
+        text: "校园"
       }, {
-        url: "/static/ran.png",
-        text:"然"
+        url: "/static/xiangcun.jpg",
+        text: "乡村"
+      }, {
+        url: "/static/shechu.jpg",
+        text: "社畜"
       }, {
         url: "/static/xin.png",
-        text:"心"
-      }, {
-        url: "/static/dong.png",
-        text:"动"
+        text: "同城"
       }]
     }
   },
@@ -246,31 +262,38 @@ export default {
 }
 
 .grid-item {
-  width: 90px;
-  height: 90px;
-  margin-left: 5px;
+  width: 85%;
+  height: 85%;
   margin-top: 5px;
-  border-radius: 100px 100px 100px 100px;
+  border-radius: 150px 150px 150px 150px;
   background: rgb(157, 35, 143);
-  opacity: 0.5;
+  opacity: 1;
   filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
 }
 
 .grid-item-box {
-  width: 180px;
-  height: 100%;
-  margin-left: 10px;
-  margin-top: 8px;
+  width: 95%;
+  height: 95%;
+  margin-top: 5px;
+  margin-left: 5px;
   border-radius: 30px 30px 30px 30px;
   background: rgb(157, 35, 143);
-  opacity: 0.5;
+  opacity: 1;
   filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
 }
-
+.image-radius{
+  width: 100%; height: 100%;
+  border-radius: 30px 30px 30px 30px;
+  filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
+}
 .text {
-  margin-top: 250px;
-  margin-left: 25px;
-  color: #fff;
+
+
+  color: rgb(199, 55, 55);
+  font-size: 20upx;
+  margin-left: 1vh;
+  text-align: center;
+
 
 }
 
@@ -287,11 +310,11 @@ export default {
 }
 
 .swiper-box {
-  height: 200px;
+  height: 26vh;
 }
 
 .swiper-box1 {
-  height: 120px;
+  height: 16vh;
 }
 
 .swiper-item {
@@ -304,7 +327,17 @@ export default {
   height: 200px;
   color: #fff;
 }
-
+.grid-item-image{
+  width: 10vh;
+  height: 10vh;
+  margin-top: 1vh;
+  margin-left: 1vh;
+  border-style: double;
+  border-color:#eb49a4;
+  border-radius: 120px 120px 120px 120px;
+  opacity: 1;
+  filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
+}
 .swiper-item0 {
   background-color: #cee1fd;
 }
@@ -402,7 +435,13 @@ export default {
   background-color: #333333;
   margin-left: 10rpx;
 }
-
+.text-style {
+					position: absolute;
+					top: 240upx;
+					left: 20upx;
+					font-size: 70upx;
+					color: #FFFFFF;
+}
 .active {
   border-style: solid;
   border-color: #007aff;

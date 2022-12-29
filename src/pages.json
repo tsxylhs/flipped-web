@@ -6,10 +6,69 @@
 				"navigationBarTitleText": "怦然心动",
 				"navigationBarBackgroundColor": "#cd128f",
 				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/main/index",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "鹊桥",
+				"navigationBarBackgroundColor": "#cd128f",
+				"navigationBarTextStyle": "white"
 				
+			}
+		},
+		{
+			"path": "pages/message/index",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"navigationBarBackgroundColor": "#cd128f",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/me/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor": "#cd128f",
+				"navigationBarTextStyle": "white"
 			}
 		}
 	],
+	"tabBar": {
+		"color": "#cd128f",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/miaoxuan.png",
+				
+				"selectedIconPath": "static/miaoxuan-active.png",
+				"text": "妙选"
+			},
+			{
+				"pagePath": "pages/main/index",
+				"iconPath": "static/queqiao.png",
+				"selectedIconPath": "static/queqiao-active.png",
+				"text": "鹊桥"
+			},
+			{
+				"pagePath": "pages/me/index",
+				"iconPath": "static/me.png",
+				"selectedIconPath": "static/me-active.png",
+				"text": "我的"
+			}
+		],
+		"midButton": {
+			"height": "100px",
+			"width": "80px",
+			"text": "鹊桥",
+			"iconPath": "static/add.png",
+			"backgroundImage": "static/add.png"
+		}
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -19,7 +78,6 @@
 	"easycom": {
 		"autoscan": true,
 		"custom": {
-			// uni-ui 规则如下配置
 			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
 		}
 	}
