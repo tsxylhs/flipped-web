@@ -55,17 +55,17 @@ export default {
       cover: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
       avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png',
       list: [{
-        url: "/static/xiaoyuan.jpg",
-        text: "我私会的"
+        url: "/static/guanzhu1.png",
+        text: "我的关注"
       }, {
-        url: "/static/xiangcun.jpg",
-        text: "私会我的"
+        url: "/static/guanzhu.png",
+        text: "关注我的"
       }, {
-        url: "/static/shechu.jpg",
+        url: "/static/laifang.png",
         text: "最近来访"
       }, {
-        url: "/static/xin.png",
-        text: "我的主页"
+        url: "/static/wanshan.png",
+        text: "完善信息"
       }]
     }
   },
