@@ -41,9 +41,6 @@
     </uni-grid>
 
     <!--悬浮框--->
-    <uni-fab ref="fab" :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical"
-      :direction="direction" @trigger="trigger" @fabClick="fabClick"></uni-fab>
-    
   </view>
   
 </template>
@@ -83,40 +80,8 @@ export default {
         selectedBorder: '1px rgba(255, 90, 95,0.9) solid'
       },
 
-      horizontal: 'right',
-      vertical: 'bottom',
-      direction: 'vertical',
-      pattern: {
-        color: '#cd128f',
-        backgroundColor: '#fff',
-        selectedColor: '#007AFF',
-        buttonColor: '#cd128f',
-        iconColor: '#fff',
-      },
-      content: [{
-        iconPath: '/static/local.png',
-        selectedIconPath: '/static/local-active.png',
-        text: '地区',
-        active: false
-      },
-      {
-        iconPath: '/static/add.png',
-        selectedIconPath: '/static/add-active.png',
-        text: '添加',
-        active: false
-      },
-      {
-        iconPath: '/static/message.png',
-        selectedIconPath: '/static/message.png',
-        text: '消息',
-        active: false
-      },
-      {
-        iconPath: '/static/manage.png',
-        selectedIconPath: '/static/manage.png',
-        text: '设置',
-        active: false
-      }],
+     
+  
 
       topics: [[{
         url: "/static/xiangcun.jpg",
@@ -191,12 +156,7 @@ export default {
       this.swiperDotIndex = e
     },
     back() { },
-    fabClick() {
-      uni.showToast({
-        title: '点击了悬浮按钮',
-        icon: 'none'
-      })
-    },
+
     changeGrid(e) { },
     changeImage(e) {
       this.current = e.detail.current
