@@ -1,10 +1,10 @@
 <template>
   <view class="container">
-    <view style="height: 30vh; background-image: linear-gradient(to bottom, #cd128f, #DcDCdc);;">
+    <view style="height: 27vh; background-image: linear-gradient(to bottom, #cd128f, #DcDCdc);">
       <uni-row class="demo-uni-row" :gutter="gutter" :width="nvueWidth">
         <uni-col :span="3">
           <cover-image
-            style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px; margin-left: 20px; margin-top: 10px;"
+            style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px; margin-left: 20px;"
             :src="avatar"></cover-image>
         </uni-col>
         <uni-col :span="17">
@@ -20,18 +20,19 @@
           </uni-row>
         </uni-col>
         <button type="default"
-          style="margin-top: 20px; color: white; background-color: transparent; border: 0; opacity: 0.8;font: 0.1em sans-serif;">编辑</button>
+          style="margin-top: 20px; color: white; background-color: transparent; border: 0px; opacity: 0.8;font: 0.2em sans-serif;">编辑</button>
       </uni-row>
-      <view style="margin-top: 35px;">
-        <uni-grid :column="4" :highlight="true" @change="change" :showBorder="false" highlight="false" :square="false">
-          <uni-grid-item v-for="(item, index) in list" :index="index" :key="index" >
-            <view class="grid-item-box" style="background-color: transparent;  ">
+      <view>
+        <uni-grid :column="4" :highlight="false" @change="change" :showBorder="false" :square="false">
+          <uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+            <view style="background-color: transparent;  ">
               <uni-row :gutter="gutter" :width="nvueWidth">
-              <image style="margin-left: 35%; margin-top: 20%; height: 40px;width: 40px;" :src="item.url"></image>
+                <image style="margin-left: 35%; margin-top: 20%; height: 40px;width: 40px;" :src="item.url">
+                </image>
               </uni-row>
               <uni-row :gutter="gutter" :width="nvueWidth">
-              <text style="text-align:center; margin-left: 34%; color:white; font-size: 12px;">{{item.text}}</text>
-            </uni-row>
+                <text style="text-align:center; margin-left: 34%; color:white; font-size: 12px;">{{ item.text }}</text>
+              </uni-row>
             </view>
           </uni-grid-item>
         </uni-grid>
@@ -39,8 +40,19 @@
 
     </view>
 
-    <view style="height: 15vh; ">
-     
+    <view style="height: 15vh; margin-top: 3px; ">
+      <uni-section title="常用功能" type="line" padding>
+        <uni-grid :showBorder="false" :column="3" :square="true" :highlight="false" @change="change">
+          <uni-grid-item v-for="(item, index) in list1" :index="index" :key="index">
+            <view class="grid-item-box">
+              <cover-image style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px;"
+                :src="item.url"></cover-image>
+              <text class="textm">{{ item.text }}</text>
+            </view>
+          </uni-grid-item>
+        </uni-grid>
+      </uni-section>
+
     </view>
   </view>
 </template>
@@ -66,7 +78,45 @@ export default {
       }, {
         url: "/static/wanshan.png",
         text: "完善信息"
-      }]
+      }],
+      list1: [{
+        url: '/static/shiming.png',
+        text: '实名认证',
+        badge: '0',
+        type: "primary"
+      },
+      {
+        url: '/static/dongtai.png',
+        text: '我的动态',
+        badge: '1',
+        type: "success"
+      },
+      {
+        url: '/static/gongzhonghao.png',
+        text: '公众号',
+        badge: '99',
+        type: "warning"
+      },
+      {
+        url: '/static/huodong.png',
+        text: '活动报名'
+      },
+      {
+        url: '/static/yingyong.png',
+        text: '应用声明'
+      },
+      {
+        url: '/static/fuwu.png',
+        text: '服务与帮助'
+      },
+      {
+        url: '/static/shezhi.png',
+        text: '设置',
+        badge: '2',
+        type: "error"
+      }
+
+      ]
     }
   },
   computed: {},
@@ -102,26 +152,50 @@ export default {
 
 
 }
-.demo-uni-row {
-		margin-bottom: 10px;
-    width: 130rpx;
-    background-color: aliceblue;
-		/* #ifdef MP-TOUTIAO || MP-QQ || MP-BAIDU */
-		display: block;
-		/* #endif */
-	}
-  .demo-uni-col {
-		height: 36px;
-		border-radius: 5px;
-	}
 
-	.dark_deep {
-		background-color: #99a9bf;
-	}
+.demo-uni-row {
+  margin-bottom: 10px;
+  width: 130rpx;
+  background-color: aliceblue;
+  /* #ifdef MP-TOUTIAO || MP-QQ || MP-BAIDU */
+  display: block;
+  /* #endif */
+}
+
+.demo-uni-col {
+  height: 36px;
+  border-radius: 5px;
+}
+
+.dark_deep {
+  background-color: #99a9bf;
+}
+
 .card-text1 {
   font-size: 10px;
   color: white;
 
   font-style: normal;
+}
+
+.grid-item-box {
+  flex: 1;
+
+  /* #ifndef APP-NVUE */
+  display: flex;
+  /* #endif */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-left: 2px;
+  margin-top: 2px;
+  border-radius: 30px 30px 30px 30px;
+  background-image: linear-gradient(to bottom, #dc5cb1, #e28d8d);
+}
+
+.textm {
+  margin-top: 4px;
+  color: aliceblue;
 }
 </style>

@@ -91,7 +91,7 @@ export default {
         url: "/static/xiaoyuan.jpg",
         id: "2"
         ,
-        topicName: "话题2"
+        topicName: "春节相亲"
       }, {
         url: "/static/xiaoyuan.jpg",
         id: "3"
@@ -251,7 +251,7 @@ export default {
 
   color: rgb(199, 55, 55);
   font-size: 20upx;
-  margin-left: 1vh;
+  margin-left: 3vh;
   text-align: center;
 
 
@@ -344,7 +344,7 @@ export default {
 }
 
 .uni-bg-green {
-  background-color: #09bb07;
+  background-color:#7A90F9;
 }
 
 .uni-bg-blue {

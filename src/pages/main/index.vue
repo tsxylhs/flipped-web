@@ -23,12 +23,10 @@
         <uni-col :xs="6" :sm="6" :md="4" :lg="3" :xl="1">
         </uni-col>
       </uni-row>
-      <uni-search-bar radius="5" placeholder="搜索" clearButton="always" cancelButton="always" @confirm="search"
-        @cancel="cancel" />
+   
       <uni-fab ref="fab" :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical"
         :direction="direction" @trigger="trigger" @fabClick="fabClick"></uni-fab>
       <view>
-        <!-- 分享示例 -->
         <!-- 普通弹窗 -->
         <uni-popup ref="popup" safe-area="false" background-color="#fff" type="bottom" @change="change">
           <button style="margin-top: 3px; background-color: white; font-size: 15px;"> 关注</button>
@@ -43,6 +41,8 @@
     </view>
   </view>
   <view class="container">
+    <uni-search-bar style="margin-top: 10px;" radius="5" placeholder="搜索" clearButton="always" cancelButton="always" @confirm="search"
+        @cancel="cancel" />
     <scroll-view style="height: 80vh;" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
       :refresher-threshold="100" refresher-background="lightgreen" @refresherpulling="onPulling"
       @refresherrefresh="onRefresh" @refresherrestore="onRestore" @refresherabort="onAbort">
@@ -334,7 +334,7 @@ export default {
 
 .index-page {
   width: 100vw;
-  height: 20vh;
+  height: 12vh;
 }
 
 .tab_title {
