@@ -8,22 +8,23 @@
         </uni-col>
         <uni-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
           <button class="mini-btn"
-            style="color:aliceblue; background-color: #cd128f; border-color: #cd128f;  margin-top: 13px;  border: 0;" type="default"
-            size="mini">私会</button>
-        </uni-col>
-        <uni-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
-          <button class="mini-btn" style="  background-color: #cd128f; border-color: #cd128f;  margin-top: 13px;  border: 0;"
-            type="default" disabled="true" size="mini">桥头</button>
+            style="color:aliceblue; background-color: #cd128f; border-color: #cd128f;  margin-top: 13px;  border: 0;"
+            type="default" size="mini">私会</button>
         </uni-col>
         <uni-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
           <button class="mini-btn"
-            style=" color:aliceblue; background-color: #cd128f; border-color: #cd128f; margin-top: 13px;  border: 0;" type="default"
-            size="mini">银河</button>
+            style="  background-color: #cd128f; border-color: #cd128f;  margin-top: 13px;  border: 0;" type="default"
+            disabled="true" size="mini">桥头</button>
+        </uni-col>
+        <uni-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+          <button class="mini-btn"
+            style=" color:aliceblue; background-color: #cd128f; border-color: #cd128f; margin-top: 13px;  border: 0;"
+            type="default" size="mini">银河</button>
         </uni-col>
         <uni-col :xs="6" :sm="6" :md="4" :lg="3" :xl="1">
         </uni-col>
       </uni-row>
-   
+
       <uni-fab ref="fab" :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical"
         :direction="direction" @trigger="trigger" @fabClick="fabClick"></uni-fab>
       <view>
@@ -41,39 +42,38 @@
     </view>
   </view>
   <view class="container">
-    <uni-search-bar style="margin-top: 10px;" radius="5" placeholder="搜索" clearButton="always" cancelButton="always" @confirm="search"
-        @cancel="cancel" />
+    <uni-search-bar style="margin-top: 10px;" radius="5" placeholder="搜索" clearButton="always" cancelButton="always"
+      @confirm="search" @cancel="cancel" />
     <scroll-view style="height: 80vh;" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
       :refresher-threshold="100" refresher-background="lightgreen" @refresherpulling="onPulling"
       @refresherrefresh="onRefresh" @refresherrestore="onRestore" @refresherabort="onAbort">
 
       <uni-card title="青菜紫罗冬瓜" sub-title="18岁*广州*本科*市场营销" extra="***" :thumbnail="avatar" @click="onClick">
         <template v-slot:title>
-            <uni-row class="demo-uni-row" :gutter="gutter" :width="nvueWidth">
-              <uni-col :span="3">
-                <cover-image
-                  style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px;"
-                  :src="avatar"></cover-image>
-              </uni-col>
-              <uni-col :span="18">
-                <uni-row :gutter="gutter" :width="nvueWidth">
-                  <view style="margin-top: 15px;">
-                    <text class="card-text">青菜紫罗冬瓜</text>
-                  </view>
-                </uni-row>
-                <uni-row :gutter="gutter" :width="nvueWidth">
-                  <view style="margin-top: -12px;">
-                    <text class="card-text1">18岁*广州*本科*市场营销</text>
-                  </view>
-                </uni-row>
-              </uni-col>
-              <uni-col :span="3">
-                <button class="mini-btn" @click="actionsClick('弹层', 1, 2)"
-                  style="margin-top: 10px; background-color: white; border-color: #cd128f;border: 0;" type="default"
-                  size="mini">...</button>
-              </uni-col>
-            </uni-row>
-          </template>
+          <uni-row class="demo-uni-row" :gutter="gutter" :width="nvueWidth">
+            <uni-col :span="3">
+              <image style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px;"
+                :src="avatar"></image>
+            </uni-col>
+            <uni-col :span="18">
+              <uni-row :gutter="gutter" :width="nvueWidth">
+                <view style="margin-top: 15px;">
+                  <text class="card-text">青菜紫罗冬瓜</text>
+                </view>
+              </uni-row>
+              <uni-row :gutter="gutter" :width="nvueWidth">
+                <view style="margin-top: -12px;">
+                  <text class="card-text1">18岁*广州*本科*市场营销</text>
+                </view>
+              </uni-row>
+            </uni-col>
+            <uni-col :span="3">
+              <button class="mini-btn" @click="actionsClick('弹层', 1, 2)"
+                style="margin-top: 10px; background-color: white; border-color: #cd128f;border: 0;" type="default"
+                size="mini">...</button>
+            </uni-col>
+          </uni-row>
+        </template>
         <image style="width: 100%;" :src="cover"></image>
         <text class="uni-body uni-mt-5">卡片组件通用来显示完整独立的一段信息，同时让用户理解他的作用。例如一篇文章的预览图、作者信息、时间等，卡片通常是更复杂和更详细信息的入口点。</text>
         <view slot="actions" class="card-actions">
@@ -93,31 +93,30 @@
       </uni-card>
       <uni-card title="基础卡片" sub-title="副标题" extra="额外信息" padding="10px 0" :thumbnail="cover">
         <template v-slot:title>
-            <uni-row class="demo-uni-row" :gutter="gutter" :width="nvueWidth">
-              <uni-col :span="3">
-                <cover-image
-                  style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px;"
-                  :src="avatar"></cover-image>
-              </uni-col>
-              <uni-col :span="18">
-                <uni-row :gutter="gutter" :width="nvueWidth">
-                  <view style="margin-top: 15px;">
-                    <text class="card-text">青菜紫罗冬瓜</text>
-                  </view>
-                </uni-row>
-                <uni-row :gutter="gutter" :width="nvueWidth">
-                  <view style="margin-top: -12px;">
-                    <text class="card-text1">18岁*广州*本科*市场营销</text>
-                  </view>
-                </uni-row>
-              </uni-col>
-              <uni-col :span="3">
-                <button class="mini-btn" @click="actionsClick('弹层', 1, 2)"
-                  style="margin-top: 10px; background-color: white; border-color: #cd128f;border: 0;" type="default"
-                  size="mini">...</button>
-              </uni-col>
-            </uni-row>
-          </template>
+          <uni-row class="demo-uni-row" :gutter="gutter" :width="nvueWidth">
+            <uni-col :span="3">
+              <image style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px;"
+                :src="avatar"></image>
+            </uni-col>
+            <uni-col :span="18">
+              <uni-row :gutter="gutter" :width="nvueWidth">
+                <view style="margin-top: 15px;">
+                  <text class="card-text">青菜紫罗冬瓜</text>
+                </view>
+              </uni-row>
+              <uni-row :gutter="gutter" :width="nvueWidth">
+                <view style="margin-top: -12px;">
+                  <text class="card-text1">18岁*广州*本科*市场营销</text>
+                </view>
+              </uni-row>
+            </uni-col>
+            <uni-col :span="3">
+              <button class="mini-btn" @click="actionsClick('弹层', 1, 2)"
+                style="margin-top: 10px; background-color: white; border-color: #cd128f;border: 0;" type="default"
+                size="mini">...</button>
+            </uni-col>
+          </uni-row>
+        </template>
         <image style="width: 100%;" :src="cover"></image>
         <text class="uni-body uni-mt-5">卡片组件通用来显示完整独立的一段信息，同时让用户理解他的作用。例如一篇文章的预览图、作者信息、时间等，卡片通常是更复杂和更详细信息的入口点。</text>
         <view slot="actions" class="card-actions">
@@ -135,52 +134,50 @@
           </view>
         </view>
       </uni-card>
-      <uni-section title="双标题卡片" type="line">
-        <uni-card title="基础卡片" sub-title="副标题" extra="额外信息" :thumbnail="avatar" @click="onClick">
-          <template v-slot:title>
-            <uni-row class="demo-uni-row" :gutter="gutter" :width="nvueWidth">
-              <uni-col :span="3">
-                <cover-image
-                  style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px;"
-                  :src="avatar"></cover-image>
-              </uni-col>
-              <uni-col :span="18">
-                <uni-row :gutter="gutter" :width="nvueWidth">
-                  <view style="margin-top: 15px;">
-                    <text class="card-text">青菜紫罗冬瓜</text>
-                  </view>
-                </uni-row>
-                <uni-row :gutter="gutter" :width="nvueWidth">
-                  <view style="margin-top: -12px;">
-                    <text class="card-text1">18岁*广州*本科*市场营销</text>
-                  </view>
-                </uni-row>
-              </uni-col>
-              <uni-col :span="3">
-                <button class="mini-btn" @click="actionsClick('弹层', 1, 2)"
-                  style="margin-top: 10px; background-color: white; border-color: #cd128f;border: 0;" type="default"
-                  size="mini">...</button>
-              </uni-col>
-            </uni-row>
-          </template>
-          <image style="width: 100%;" :src="cover"></image>
-          <text class="uni-body">这是一个带头像和双标题的基础卡片，此示例展示了一个完整的卡片。</text>
-          <view slot="actions" class="card-actions">
-            <view class="card-actions-item" @click="actionsClick('分享', 1, 2)">
-              <uni-icons type="redo" size="18" color="#999"></uni-icons>
-              <text class="card-actions-item-text">分享</text>
-            </view>
-            <view class="card-actions-item" @click="actionsClick('点赞', 1, 2)">
-              <uni-icons type="heart" size="18" color="#999"></uni-icons>
-              <text class="card-actions-item-text">点赞</text>
-            </view>
-            <view class="card-actions-item" @click="actionsClick('评论', 1, 2)">
-              <uni-icons type="chatbubble" size="18" color="#999"></uni-icons>
-              <text class="card-actions-item-text">评论</text>
-            </view>
+
+      <uni-card title="基础卡片" sub-title="副标题" extra="额外信息" :thumbnail="avatar" @click="onClick">
+        <template v-slot:title>
+          <uni-row class="demo-uni-row" :gutter="gutter" :width="nvueWidth">
+            <uni-col :span="3">
+              <image style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px; margin-top: 10px;"
+                :src="avatar"></image>
+            </uni-col>
+            <uni-col :span="18">
+              <uni-row :gutter="gutter" :width="nvueWidth">
+                <view style="margin-top: 15px;">
+                  <text class="card-text">青菜紫罗冬瓜</text>
+                </view>
+              </uni-row>
+              <uni-row :gutter="gutter" :width="nvueWidth">
+                <view style="margin-top: -12px;">
+                  <text class="card-text1">18岁*广州*本科*市场营销</text>
+                </view>
+              </uni-row>
+            </uni-col>
+            <uni-col :span="3">
+              <button class="mini-btn" @click="actionsClick('弹层', 1, 2)"
+                style="margin-top: 10px; background-color: white; border-color: #cd128f;border: 0;" type="default"
+                size="mini">...</button>
+            </uni-col>
+          </uni-row>
+        </template>
+        <image style="width: 100%;" :src="cover"></image>
+        <text class="uni-body">这是一个带头像和双标题的基础卡片，此示例展示了一个完整的卡片。</text>
+        <view slot="actions" class="card-actions">
+          <view class="card-actions-item" @click="actionsClick('分享', 1, 2)">
+            <uni-icons type="redo" size="18" color="#999"></uni-icons>
+            <text class="card-actions-item-text">分享</text>
           </view>
-        </uni-card>
-      </uni-section>
+          <view class="card-actions-item" @click="actionsClick('点赞', 1, 2)">
+            <uni-icons type="heart" size="18" color="#999"></uni-icons>
+            <text class="card-actions-item-text">点赞</text>
+          </view>
+          <view class="card-actions-item" @click="actionsClick('评论', 1, 2)">
+            <uni-icons type="chatbubble" size="18" color="#999"></uni-icons>
+            <text class="card-actions-item-text">评论</text>
+          </view>
+        </view>
+      </uni-card>
     </scroll-view>
 
 
@@ -221,26 +218,26 @@ export default {
       menuTop: uni.getStorageSync('menuInfo').menuTop,
       contentTop: uni.getStorageSync('menuInfo').contentTop,
       content: [{
-        iconPath: '/static/local.png',
-        selectedIconPath: '/static/local-active.png',
+        iconPath: 'https://flipped.lncios.cn/local.png',
+        selectedIconPath: 'https://flipped.lncios.cn/local-active.png',
         text: '地区',
         active: false
       },
       {
-        iconPath: '/static/add.png',
-        selectedIconPath: '/static/add-active.png',
+        iconPath: 'https://flipped.lncios.cn/add.png',
+        selectedIconPath: 'https://flipped.lncios.cn/add-active.png',
         text: '添加',
         active: false
       },
       {
-        iconPath: '/static/message.png',
-        selectedIconPath: '/static/message.png',
+        iconPath: 'https://flipped.lncios.cn/message.png',
+        selectedIconPath: 'https://flipped.lncios.cn/message.png',
         text: '消息',
         active: false
       },
       {
-        iconPath: '/static/manage.png',
-        selectedIconPath: '/static/manage.png',
+        iconPath: 'https://flipped.lncios.cn/manage.png',
+        selectedIconPath: 'https://flipped.lncios.cn/manage.png',
         text: '设置',
         active: false
       }]

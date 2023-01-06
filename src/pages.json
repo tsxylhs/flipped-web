@@ -1,7 +1,7 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [ // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/index/main",
 			"style": {
 				"navigationBarTitleText": "怦然心动",
 				"navigationBarBackgroundColor": "#cd128f",
@@ -42,7 +42,7 @@
 		"backgroundColor": "#ffffff",
 		"list": [
 			{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/index/main",
 				"iconPath": "static/miaoxuan.png",
 				
 				"selectedIconPath": "static/miaoxuan-active.png",

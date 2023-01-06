@@ -84,61 +84,61 @@ export default {
   
 
       topics: [[{
-        url: "/static/xiangcun.jpg",
+        url: "https://flipped.lncios.cn/xiangcun.jpg",
         id: "1",
         topicName: "跨年计划"
       }, {
-        url: "/static/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
         id: "2"
         ,
         topicName: "春节相亲"
       }, {
-        url: "/static/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
         id: "3"
         ,
         topicName: "话题3"
       }, {
-        url: "/static/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
         
         topicName: "话题4"
       }, {
-         url: "/static/xiaoyuan.jpg",
+         url: "https://flipped.lncios.cn/xiaoyuan.jpg",
         
         topicName: "话题5"
       }],
       [{
-        url: "/static/add.png",
+        url: "https://flipped.lncios.cn/add.png",
         id: "2-1",
         topicName: ""
       }, {
-        url: "/static/add.png",
+        url: "https://flipped.lncios.cn/add.png",
         id: "2-2",
         topicName: ""
       }, {
-        url: "/static/add.png",
+        url: "https://flipped.lncios.cn/add.png",
         id: "2-3",
         topicName: ""
       }, {
-        url: "/static/add.png", id: "4",
+        url: "https://flipped.lncios.cn/add.png", id: "4",
         topicName: ""
       }, {
-        url: "/static/add.png", id: "4"
+        url: "https://flipped.lncios.cn/add.png", id: "4"
         ,
         topicName: "话题5"
       }]
       ],
       //grid
       list: [{
-        url: "/static/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
         text: "校园"
       }, {
-        url: "/static/xiangcun.jpg",
+        url: "https://flipped.lncios.cn/xiangcun.jpg",
         text: "乡村"
       }, {
-        url: "/static/shechu.jpg",
+        url: "https://flipped.lncios.cn/shechu.jpg",
         text: "社畜"
       }, {
-        url: "/static/xin.png",
+        url: "https://flipped.lncios.cn/xin.png",
         text: "同城"
       }]
     }
@@ -244,6 +244,7 @@ export default {
 .image-radius{
   width: 100%; height: 100%;
   border-radius: 30px 30px 30px 30px;
+  z-index: -100;
   filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
 }
 .text {
@@ -296,6 +297,7 @@ export default {
   border-color:#eb49a4;
   border-radius: 120px 120px 120px 120px;
   opacity: 1;
+  z-index: -100;
   filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
 }
 .swiper-item0 {

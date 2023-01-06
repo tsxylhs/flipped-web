@@ -67,50 +67,50 @@ export default {
       cover: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
       avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png',
       list: [{
-        url: "/static/guanzhu1.png",
+        url: "https://flipped.lncios.cn/guanzhu1.png",
         text: "我的关注"
       }, {
-        url: "/static/guanzhu.png",
+        url: "https://flipped.lncios.cn/guanzhu.png",
         text: "关注我的"
       }, {
-        url: "/static/laifang.png",
+        url: "https://flipped.lncios.cn/laifang.png",
         text: "最近来访"
       }, {
-        url: "/static/wanshan.png",
+        url: "https://flipped.lncios.cn/wanshan.png",
         text: "完善信息"
       }],
       list1: [{
-        url: '/static/shiming.png',
+        url: 'https://flipped.lncios.cn/shiming.png',
         text: '实名认证',
         badge: '0',
         type: "primary"
       },
       {
-        url: '/static/dongtai.png',
+        url: 'https://flipped.lncios.cn/dongtai.png',
         text: '我的动态',
         badge: '1',
         type: "success"
       },
       {
-        url: '/static/gongzhonghao.png',
+        url: 'https://flipped.lncios.cn/gongzhonghao.png',
         text: '公众号',
         badge: '99',
         type: "warning"
       },
       {
-        url: '/static/huodong.png',
+        url: 'https://flipped.lncios.cn/huodong.png',
         text: '活动报名'
       },
       {
-        url: '/static/yingyong.png',
+        url: 'https://flipped.lncios.cn/yingyong.png',
         text: '应用声明'
       },
       {
-        url: '/static/fuwu.png',
+        url: 'https://flipped.lncios.cn/fuwu.png',
         text: '服务与帮助'
       },
       {
-        url: '/static/shezhi.png',
+        url: 'https://flipped.lncios.cn/shezhi.png',
         text: '设置',
         badge: '2',
         type: "error"
