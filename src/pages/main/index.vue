@@ -38,24 +38,8 @@
   </view>
 
   <!-- 私会 -->
-  <view v-if="active == 1" class="container">
-  
-      <uni-list :border="true">
-        <!-- 显示圆形头像 -->
-         <view v-for="(item, index) in list" :key="id">
-        <uni-list-chat :avatar-circle="true" :title="item.name"
-          :avatar="item.url" :note="item.text" time="2020-02-02 20:20"
-          badge-positon="left" :badge-text="item.count">
-          <view class="chat-custom-right">
-            <text class="chat-custom-text">刚刚</text>
-            <!-- 需要使用 uni-icons 请自行引入 -->
-            <uni-icons type="star-filled" color="#999" size="18"></uni-icons>
-          </view>
-        </uni-list-chat>
-      </view>
-      </uni-list>
-  
-
+  <view v-if="active == 1" style="height:80vh" >
+   <focus></focus>
   </view>
   <!-- 桥头 -->
   <view v-if="active == 2" class="container">
@@ -197,26 +181,31 @@
       </uni-card>
     </scroll-view>
   </view>
-  <!-- 弹窗 -->
-  <view v-if="active == 3" class="container">
-    <view style="height: 82vh; background-color: bisque;"></view>
-    <view style="height: 8vh; background-color:blueviolet;">
-    	<view class="uni-form-item uni-column">
-        <uni-easyinput class="uni-mt-5" trim="all" v-model="value" placeholder="请输入内容" @input="input"></uni-easyinput>
-			</view>
-    </view>
-  </view>
+  <!--聊天 -->
+  <view v-if="active == 3" style="height:80vh">
+    <chatIndex></chatIndex>
+	</view>
+
+
+
+
+
+
 </template>
 
 <script>
-
+	import focus from '../../components/focus/index.vue'
+	import chatIndex from '../../components/chatIndex/index.vue'
+  const innerAudioContext = uni.createInnerAudioContext();
 export default {
   name: "main",
-  components: {},
+  components: { chatIndex,focus},
   props: {},
   data() {
     return {
       ///333
+      
+
       inputValue:"",
       //1111
       list: [{
@@ -314,12 +303,11 @@ export default {
   },
   computed: {},
   methods: {
-    ///3333
-    input(e) {
-				console.log('输入内容：', e);
-			},
 
-        
+    ///3333
+   
+
+      //222
     changeTips(type) {
       switch (type) {
         case 1:
@@ -397,7 +385,10 @@ export default {
   // 页面周期函数--监听页面初次渲染完成
   onReady() { },
   // 页面周期函数--监听页面显示(not-nvue)
-  onShow() { },
+  onShow() {
+			// 数组倒叙 主要是应对后端传过来的数据
+
+		},
   // 页面周期函数--监听页面隐藏
   onHide() { },
   // 页面周期函数--监听页面卸载
@@ -413,7 +404,7 @@ export default {
 } 
 </script>
 
-<style  scoped>
+<style  lang="scss">
 .chat-custom-right {
   flex: 1;
   /* #ifndef APP-NVUE */
@@ -557,4 +548,9 @@ button::after {
   font-size: 10px;
   font-style: normal;
 }
+
+
+
+
+
 </style>

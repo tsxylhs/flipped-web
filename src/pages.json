@@ -44,6 +44,18 @@
 			"style": {
 				"navigationBarTitleText": "chats"
 			}
+		},
+		{
+			"path": "components/chatIndex/index",
+			"style": {
+				"navigationBarTitleText": "chatIndex"
+			}
+		},
+		{
+			"path": "components/focus/index",
+			"style": {
+				"navigationBarTitleText": "focus"
+			}
 		}
 	],
 	"tabBar": {
