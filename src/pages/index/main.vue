@@ -2,50 +2,52 @@
   <view class="container">
   
     <!--轮播图-->
+
     <uni-swiper-dot class="uni-swiper-dot-box" @clickItem=clickItem :info="info" :current="current" :mode="mode"
       :dots-styles="dotsStyles" field="content">
-      <swiper class="swiper-box" @change="changeImage" :current="swiperDotIndex">
+      <swiper class="swiper-box" @change="changeImage" :autoplay="true" :current="swiperDotIndex">
         <swiper-item v-for="(item, index) in info" :key="index">
-          <view class="swiper-item" :class="'swiper-item' + index">
+          <view @click="clickActive(item)" class="swiper-item" :class="'swiper-item' + index">
             <image :src="item.url" class="image" mode="aspectFill" />
           </view>
         </swiper-item>
       </swiper>
     </uni-swiper-dot>
-
-    <swiper class="swiper-box1" :indicator-dots="false">
+  <view style="height: 15vh;">
+    <swiper class="swiper-box1" :indicator-dots="false" :autoplay="true" :interval="9000">
       <swiper-item v-for="(topic, index) in topics">
-        <uni-grid :highlight="false" :showBorder="false" :column="5"  @change="change">
+        <uni-grid :highlight="false" :showBorder="false" :column="5"  >
           <uni-grid-item   v-for="(item, index) in topic" :index="index" :key="index">
             
-            <view >
-              <cover-image class="grid-item-image" mode="aspectFill" :src="item.url"  >
-              </cover-image>
+            <view  @click="changeTopic(item)">
+              <image class="grid-item-image" mode="aspectFill" :src="item.url"  >
+              </image>
           </view>
-          <view><text class="text">{{ item.topicName }}</text></view>
+          <view class="text-topic">{{ item.topicName }}</view>
           </uni-grid-item>
         </uni-grid>
       </swiper-item>
     </swiper>
-    <uni-grid :highlight="false"  :showBorder="false" :column="2" @change="change">
+  </view>
+ 
+    <uni-section title="鹊桥甄选" type="line" titleColor="lightcoral">
+    <uni-grid :highlight="false"  :showBorder="false" :column="2" >
       <uni-grid-item  v-for="(item, index) in list" :index="index" :key="index">
-        <view class="grid-item-box">
-  
-          <cover-image  class="image-radius" :src="item.url" mode="aspectFill" />
-    
-        <view class="text-style">{{ item.text }}</view>
-     
-      
+        <view @click="changeType(item)" class="grid-item-box">
+          <view  class="text-style">{{ item.text }}</view>
+          <image  class="image-radius" :src="item.url" mode="aspectFill" />
         </view>
       </uni-grid-item>
     </uni-grid>
-
-    <!--悬浮框--->
+    </uni-section>
   </view>
+    <!--悬浮框--->
+
   
 </template>
 
 <script>
+
 import { Warning } from 'postcss'
 
 export default {
@@ -57,16 +59,19 @@ export default {
       current: 0,
 
       info: [{
+      
         colorClass: 'uni-bg-red',
         url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
         content: '春节线下相亲会A'
       },
       {
+     
         colorClass: 'uni-bg-green',
         url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
         content: '春节线下相亲会B'
       },
       {
+   
         colorClass: 'uni-bg-blue',
         url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
         content: '春节线下相亲会C'
@@ -152,30 +157,42 @@ export default {
     return false
   },
   methods: {
-    clickItem(e) {
+ clickItem(e){
       this.swiperDotIndex = e
     },
-    back() { },
-
-    changeGrid(e) { },
     changeImage(e) {
       this.current = e.detail.current
     },
-    trigger(e) {
-      console.log(e)
-      this.content[e.index].active = !e.item.active
-      // uni.showModal({
-      // 	title: '提示',
-      // 	content: `您${this.content[e.index].active ? '选中了' : '取消了'}${e.item.text}`,
-      // 	success: function(res) {
-      // 		if (res.confirm) {
-      // 			console.log('用户点击确定')
-      // 		} else if (res.cancel) {
-      // 			console.log('用户点击取消')
-      // 		}
-      // 	}
-      // })
+    clickActive(item) {
+      uni.showToast({
+        title: '点击了轮播图'+JSON.stringify(item),
+        icon: 'none'
+      })
+      //this.swiperDotIndex = e
     },
+    //话题
+    changeTopic(item){
+      console.log(JSON.stringify(item));
+      uni.showToast({
+        title: '点击了按钮'+item.topicName,
+        icon: 'none'
+      })
+    },
+    //类型
+    changeType(item){
+       uni.showToast({
+        title: '点击了按钮'+item.text,
+        icon: 'none'
+      })
+    },
+    //活动
+    changeActive(e){
+      console.log(e);
+      uni.showToast({
+        title: '滑动了轮播图',
+        icon: 'none'
+      })
+    }
   },
 }
 </script>
@@ -222,8 +239,8 @@ export default {
 }
 
 .grid-item {
-  width: 85%;
-  height: 85%;
+  width: 80%;
+  height: 80%;
   margin-top: 5px;
   border-radius: 150px 150px 150px 150px;
   background: rgb(157, 35, 143);
@@ -234,7 +251,7 @@ export default {
 .grid-item-box {
   width: 95%;
   height: 95%;
-  margin-top: 5px;
+  margin-top: 2px;
   margin-left: 5px;
   border-radius: 30px 30px 30px 30px;
   background: rgb(157, 35, 143);
@@ -253,6 +270,7 @@ export default {
   color: rgb(199, 55, 55);
   font-size: 20upx;
   margin-left: 3vh;
+
   text-align: center;
 
 
@@ -403,6 +421,11 @@ export default {
 					left: 20upx;
 					font-size: 70upx;
 					color: #FFFFFF;
+}
+.text-topic{
+					font-size: 22upx;
+					color: #007aff;
+          text-align: center;
 }
 .active {
   border-style: solid;

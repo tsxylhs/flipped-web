@@ -3,29 +3,24 @@
     <!-- paddingTop不生效可换成marginTop -->
     <view class="tab_title" :style="{ paddingTop: statusBarHeight }">
       <uni-row class="demo-uni-row" :gutter="gutter">
-        <uni-col :xs="6" :sm="6" :md="4" :lg="3" :xl="1">
+        <uni-col :xs="6" :sm="3" :md="4" :lg="3" :xl="1">
           <view class="demo-uni-col dark"></view>
         </uni-col>
         <uni-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
-          <button class="mini-btn"
-            style="color:aliceblue; background-color: #cd128f; border-color: #cd128f;  margin-top: 13px;  border: 0;"
-            type="default" size="mini">私会</button>
+          <view :style="typeStyleActive1" type="default" @click="changeTips(1)">私会</view>
         </uni-col>
         <uni-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
-          <button class="mini-btn"
-            style="  background-color: #cd128f; border-color: #cd128f;  margin-top: 13px;  border: 0;" type="default"
-            disabled="true" size="mini">桥头</button>
+          <view :style="typeStyleActive2" disabled="true" @click="changeTips(2)">桥头</view>
         </uni-col>
         <uni-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
-          <button class="mini-btn"
-            style=" color:aliceblue; background-color: #cd128f; border-color: #cd128f; margin-top: 13px;  border: 0;"
-            type="default" size="mini">银河</button>
+          <view :style="typeStyleActive3" type="default" @click="changeTips(3)" size="mini">银河</view>
         </uni-col>
         <uni-col :xs="6" :sm="6" :md="4" :lg="3" :xl="1">
+          <view class="demo-uni-col dark"></view>
         </uni-col>
       </uni-row>
 
-      <uni-fab ref="fab" :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical"
+      <uni-fab v-if="active==2" ref="fab" :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical"
         :direction="direction" @trigger="trigger" @fabClick="fabClick"></uni-fab>
       <view>
         <!-- 普通弹窗 -->
@@ -41,7 +36,29 @@
       </view>
     </view>
   </view>
-  <view class="container">
+
+  <!-- 私会 -->
+  <view v-if="active == 1" class="container">
+  
+      <uni-list :border="true">
+        <!-- 显示圆形头像 -->
+         <view v-for="(item, index) in list" :key="id">
+        <uni-list-chat :avatar-circle="true" :title="item.name"
+          :avatar="item.url" :note="item.text" time="2020-02-02 20:20"
+          badge-positon="left" :badge-text="item.count">
+          <view class="chat-custom-right">
+            <text class="chat-custom-text">刚刚</text>
+            <!-- 需要使用 uni-icons 请自行引入 -->
+            <uni-icons type="star-filled" color="#999" size="18"></uni-icons>
+          </view>
+        </uni-list-chat>
+      </view>
+      </uni-list>
+  
+
+  </view>
+  <!-- 桥头 -->
+  <view v-if="active == 2" class="container">
     <uni-search-bar style="margin-top: 10px;" radius="5" placeholder="搜索" clearButton="always" cancelButton="always"
       @confirm="search" @cancel="cancel" />
     <scroll-view style="height: 80vh;" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
@@ -179,25 +196,77 @@
         </view>
       </uni-card>
     </scroll-view>
-
-
-
-
-
-
-
   </view>
-
-
+  <!-- 弹窗 -->
+  <view v-if="active == 3" class="container">
+    <view style="height: 82vh; background-color: bisque;"></view>
+    <view style="height: 8vh; background-color:blueviolet;">
+    	<view class="uni-form-item uni-column">
+        <uni-easyinput class="uni-mt-5" trim="all" v-model="value" placeholder="请输入内容" @input="input"></uni-easyinput>
+			</view>
+    </view>
+  </view>
 </template>
 
 <script>
+
 export default {
   name: "main",
   components: {},
   props: {},
   data() {
     return {
+      ///333
+      inputValue:"",
+      //1111
+      list: [{
+        id:"1",
+        name:"小花",
+        count:"2",
+        text:"这里有个姑娘叫小花",
+        url: 'https://flipped.lncios.cn/queqiao.png'
+      }, {
+        id:"2",
+        name:"萝卜",
+        count:"4",
+        text:"这里有个姑娘叫小花",
+        url: 'https://flipped.lncios.cn/queqiao-active.png'
+      }, {
+        id:"3",
+        name:"青菜",
+        count:"1",
+        text:"这里有个姑娘叫小花",
+        url: 'https://flipped.lncios.cn/xiaoyuan.jpg'
+      }],
+
+    
+    
+
+
+
+
+      // 2222
+      active: 2,
+      typeStyleActive1: {},
+      typeStyleActive2: {},
+      typeStyleActive3: {},
+      //样式
+      typeStyle: {
+        color: "aliceblue",
+        backgroundColor: "#cd128f",
+        borderRadius: "220px 220px 220px 220px",
+        borderColor: "#cd128f",
+      },
+      typeStyleActive: {
+        color: "aliceblue",
+        backgroundColor: "#cd128f",
+        borderRadius: "220px 220px 220px 220px",
+        borderColor: "#7A90F9",
+        color: " #007aff",
+        marginTop: "8px",
+
+
+      },
       horizontal: 'right',
       vertical: 'bottom',
       direction: 'vertical',
@@ -245,6 +314,34 @@ export default {
   },
   computed: {},
   methods: {
+    ///3333
+    input(e) {
+				console.log('输入内容：', e);
+			},
+
+        
+    changeTips(type) {
+      switch (type) {
+        case 1:
+          this.typeStyleActive2 = this.typeStyle;
+          this.typeStyleActive1 = this.typeStyleActive;
+          this.typeStyleActive3 = this.typeStyle;
+          this.active = 1;
+          break;
+        case 2:
+          this.typeStyleActive1 = this.typeStyle;
+          this.typeStyleActive2 = this.typeStyleActive;
+          this.typeStyleActive3 = this.typeStyle;
+          this.active = 2;
+          break;
+        case 3:
+          this.typeStyleActive2 = this.typeStyle;
+          this.typeStyleActive3 = this.typeStyleActive;
+          this.typeStyleActive1 = this.typeStyle;
+          this.active = 3;
+          break;
+      }
+    },
     actionsClick(val, val1, val2) {
       switch (val) {
         case '弹层':
@@ -292,7 +389,11 @@ export default {
   watch: {},
 
   // 页面周期函数--监听页面加载
-  onLoad() { },
+  onLoad() {
+    this.typeStyleActive1 = this.typeStyle;
+    this.typeStyleActive2 = this.typeStyleActive;
+    this.typeStyleActive3 = this.typeStyle;
+  },
   // 页面周期函数--监听页面初次渲染完成
   onReady() { },
   // 页面周期函数--监听页面显示(not-nvue)
@@ -313,21 +414,21 @@ export default {
 </script>
 
 <style  scoped>
-.left {
-  float: left;
-  position: absolute;
-
-  line-height: 90rpx;
-  top: 0;
-  bottom: 0;
-  left: 20rpx;
-  margin: auto;
-
+.chat-custom-right {
+  flex: 1;
+  /* #ifndef APP-NVUE */
+  display: flex;
+  /* #endif */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-.box-sizing {
-  box-sizing: border-box;
+.chat-custom-text {
+  font-size: 12px;
+  color: #999;
 }
+
 
 .index-page {
   width: 100vw;
@@ -413,7 +514,7 @@ button::after {
 .dark {}
 
 .light {
-  background-color: #e5e9f2;
+  background-color: #1f9deb;
 }
 
 .example-body {

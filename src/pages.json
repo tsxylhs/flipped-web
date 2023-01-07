@@ -15,7 +15,6 @@
 				"navigationBarTitleText": "鹊桥",
 				"navigationBarBackgroundColor": "#cd128f",
 				"navigationBarTextStyle": "white"
-				
 			}
 		},
 		{
@@ -33,6 +32,18 @@
 				"navigationBarBackgroundColor": "#cd128f",
 				"navigationBarTextStyle": "white"
 			}
+		},
+		{
+			"path": "pages/main/meets/index",
+			"style": {
+				"navigationBarTitleText": "meets"
+			}
+		},
+		{
+			"path": "pages/main/chats/index",
+			"style": {
+				"navigationBarTitleText": "chats"
+			}
 		}
 	],
 	"tabBar": {
@@ -44,7 +55,6 @@
 			{
 				"pagePath": "pages/index/main",
 				"iconPath": "static/miaoxuan.png",
-				
 				"selectedIconPath": "static/miaoxuan-active.png",
 				"text": "妙选"
 			},

@@ -45,8 +45,8 @@
         <uni-grid :showBorder="false" :column="3" :square="true" :highlight="false" @change="change">
           <uni-grid-item v-for="(item, index) in list1" :index="index" :key="index">
             <view class="grid-item-box">
-              <cover-image style="  border-radius: 120px 120px 120px 120px; height: 40px; width: 40px;"
-                :src="item.url"></cover-image>
+              <image style="height: 40px; width: 40px;"
+                :src="item.url"></image>
               <text class="textm">{{ item.text }}</text>
             </view>
           </uni-grid-item>
