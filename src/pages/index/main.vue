@@ -1,6 +1,6 @@
 <template >
   <view class="container">
-  
+
     <!--轮播图-->
 
     <uni-swiper-dot class="uni-swiper-dot-box" @clickItem=clickItem :info="info" :current="current" :mode="mode"
@@ -13,37 +13,37 @@
         </swiper-item>
       </swiper>
     </uni-swiper-dot>
-  <view style="height: 15vh;">
-    <swiper class="swiper-box1" :indicator-dots="false" :autoplay="true" :interval="9000">
-      <swiper-item v-for="(topic, index) in topics">
-        <uni-grid :highlight="false" :showBorder="false" :column="5"  >
-          <uni-grid-item   v-for="(item, index) in topic" :index="index" :key="index">
-            
-            <view  @click="changeTopic(item)">
-              <image class="grid-item-image" mode="aspectFill" :src="item.url"  >
-              </image>
-          </view>
-          <view class="text-topic">{{ item.topicName }}</view>
-          </uni-grid-item>
-        </uni-grid>
-      </swiper-item>
-    </swiper>
-  </view>
- 
+    <view style="height: 15vh;">
+      <swiper class="swiper-box1" :indicator-dots="false" :autoplay="true" :interval="9000">
+        <swiper-item v-for="(topic, index) in topics">
+          <uni-grid :highlight="false" :showBorder="false" :column="5">
+            <uni-grid-item v-for="(item, index) in topic" :index="index" :key="index">
+
+              <view @click="changeTopic(item)">
+                <image class="grid-item-image" mode="aspectFill" :src="item.url">
+                </image>
+              </view>
+              <view class="text-topic">{{ item.topicName }}</view>
+            </uni-grid-item>
+          </uni-grid>
+        </swiper-item>
+      </swiper>
+    </view>
+
     <uni-section title="鹊桥甄选" type="line" titleColor="lightcoral">
-    <uni-grid :highlight="false"  :showBorder="false" :column="2" >
-      <uni-grid-item  v-for="(item, index) in list" :index="index" :key="index">
-        <view @click="changeType(item)" class="grid-item-box">
-          <view  class="text-style">{{ item.text }}</view>
-          <image  class="image-radius" :src="item.url" mode="aspectFill" />
-        </view>
-      </uni-grid-item>
-    </uni-grid>
+      <uni-grid :highlight="false" :showBorder="false" :column="2">
+        <uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
+          <view @click="changeType(item)" class="grid-item-box">
+            <view class="text-style">{{ item.text }}</view>
+            <image class="image-radius" :src="item.url" mode="aspectFill" />
+          </view>
+        </uni-grid-item>
+      </uni-grid>
     </uni-section>
   </view>
-    <!--悬浮框--->
+  <!--悬浮框--->
 
-  
+
 </template>
 
 <script>
@@ -59,19 +59,19 @@ export default {
       current: 0,
 
       info: [{
-      
+
         colorClass: 'uni-bg-red',
         url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
         content: '春节线下相亲会A'
       },
       {
-     
+
         colorClass: 'uni-bg-green',
         url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
         content: '春节线下相亲会B'
       },
       {
-   
+
         colorClass: 'uni-bg-blue',
         url: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
         content: '春节线下相亲会C'
@@ -85,13 +85,13 @@ export default {
         selectedBorder: '1px rgba(255, 90, 95,0.9) solid'
       },
 
-     
-  
+
+
 
       topics: [[{
         url: "https://flipped.lncios.cn/xiangcun.jpg",
         id: "1",
-        topicName: "跨年计划"
+        topicName: "而立之年"
       }, {
         url: "https://flipped.lncios.cn/xiaoyuan.jpg",
         id: "2"
@@ -104,11 +104,11 @@ export default {
         topicName: "话题3"
       }, {
         url: "https://flipped.lncios.cn/xiaoyuan.jpg",
-        
+
         topicName: "话题4"
       }, {
-         url: "https://flipped.lncios.cn/xiaoyuan.jpg",
-        
+        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
+
         topicName: "话题5"
       }],
       [{
@@ -157,7 +157,7 @@ export default {
     return false
   },
   methods: {
- clickItem(e){
+    clickItem(e) {
       this.swiperDotIndex = e
     },
     changeImage(e) {
@@ -165,28 +165,39 @@ export default {
     },
     clickActive(item) {
       uni.showToast({
-        title: '点击了轮播图'+JSON.stringify(item),
+        title: '点击了轮播图' + JSON.stringify(item),
         icon: 'none'
+      })
+      uni.navigateTo({
+        url: "/pages/actives/index?type=1",
+        animationType: 'fade-in',
+      	animationDuration: 200
       })
       //this.swiperDotIndex = e
     },
     //话题
-    changeTopic(item){
+    changeTopic(item) {
       console.log(JSON.stringify(item));
       uni.showToast({
-        title: '点击了按钮'+item.topicName,
+        title: '点击了按钮' + item.topicName,
         icon: 'none'
+      })
+      uni.navigateTo({
+        url: "/pages/topics/index?type=1",
+        animationType: 'fade-in',
+      	animationDuration: 200
       })
     },
     //类型
-    changeType(item){
-       uni.showToast({
-        title: '点击了按钮'+item.text,
-        icon: 'none'
+    changeType(item) {
+      uni.navigateTo({
+        url: "/pages/pick/index?type=1",
+        animationType: 'fade-in',
+      	animationDuration: 200
       })
     },
     //活动
-    changeActive(e){
+    changeActive(e) {
       console.log(e);
       uni.showToast({
         title: '滑动了轮播图',
@@ -258,12 +269,15 @@ export default {
   opacity: 1;
   filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
 }
-.image-radius{
-  width: 100%; height: 100%;
+
+.image-radius {
+  width: 100%;
+  height: 100%;
   border-radius: 30px 30px 30px 30px;
   z-index: -100;
   filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
 }
+
 .text {
 
 
@@ -306,18 +320,20 @@ export default {
   height: 200px;
   color: #fff;
 }
-.grid-item-image{
+
+.grid-item-image {
   width: 10vh;
   height: 10vh;
   margin-top: 1vh;
   margin-left: 1vh;
   border-style: double;
-  border-color:#eb49a4;
+  border-color: #eb49a4;
   border-radius: 120px 120px 120px 120px;
   opacity: 1;
   z-index: -100;
   filter: progid:DXImageTransform.Microsoft.alpha(opacity=50);
 }
+
 .swiper-item0 {
   background-color: #cee1fd;
 }
@@ -364,7 +380,7 @@ export default {
 }
 
 .uni-bg-green {
-  background-color:#7A90F9;
+  background-color: #7A90F9;
 }
 
 .uni-bg-blue {
@@ -415,18 +431,21 @@ export default {
   background-color: #333333;
   margin-left: 10rpx;
 }
+
 .text-style {
-					position: absolute;
-					top: 240upx;
-					left: 20upx;
-					font-size: 70upx;
-					color: #FFFFFF;
+  position: absolute;
+  top: 240upx;
+  left: 20upx;
+  font-size: 70upx;
+  color: #FFFFFF;
 }
-.text-topic{
-					font-size: 22upx;
-					color: #007aff;
-          text-align: center;
+
+.text-topic {
+  font-size: 22upx;
+  color: #007aff;
+  text-align: center;
 }
+
 .active {
   border-style: solid;
   border-color: #007aff;

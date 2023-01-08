@@ -1,5 +1,8 @@
+
 <script>
+
 export default {
+	
   onLaunch: function () {
     console.log('App Launch')
   },
@@ -50,5 +53,6 @@ export default {
 </script>
 
 <style>
+@import "./wxcomponents/vant/common/index.wxss";
 /*每个页面公共css */
 </style>

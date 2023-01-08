@@ -2,7 +2,7 @@
    <uni-list :border="true">
         <!-- 显示圆形头像 -->
          <view v-for="(item, index) in list" :key="id">
-        <uni-list-chat :avatar-circle="true" :title="item.name"
+        <uni-list-chat clickable="true" @click="toDynamic(item)" :avatar-circle="true" :title="item.name"
           :avatar="item.url" :note="item.text" time="2020-02-02 20:20"
           badge-positon="left" :badge-text="item.count">
           <view class="chat-custom-right">
@@ -46,7 +46,15 @@ export default {
     }
   },
   computed: {},
-  methods: {},
+  methods: {
+    toDynamic(item){
+      uni.navigateTo({
+        url: "/pages/dynamic/index?type=1",
+        animationType: 'fade-in',
+      	animationDuration: 200
+      })
+    }
+  },
   watch: {},
 
   // 页面周期函数--监听页面加载

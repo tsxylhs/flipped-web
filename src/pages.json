@@ -34,18 +34,6 @@
 			}
 		},
 		{
-			"path": "pages/main/meets/index",
-			"style": {
-				"navigationBarTitleText": "meets"
-			}
-		},
-		{
-			"path": "pages/main/chats/index",
-			"style": {
-				"navigationBarTitleText": "chats"
-			}
-		},
-		{
 			"path": "components/chatIndex/index",
 			"style": {
 				"navigationBarTitleText": "chatIndex"
@@ -55,6 +43,45 @@
 			"path": "components/focus/index",
 			"style": {
 				"navigationBarTitleText": "focus"
+			}
+		},
+		{
+			"path": "pages/pick/index",
+			"style": {
+				"navigationBarBackgroundColor": "#cd128f",
+				"navigationBarTitleText": "甄选",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/topics/index",
+			"style": {
+				"navigationBarBackgroundColor": "#cd128f",
+				"navigationBarTitleText": "热门话题",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/actives/index",
+			"style": {
+				"navigationBarTitleText": "活动",
+				"navigationBarBackgroundColor": "#cd128f",
+				"navigationBarTextStyle": "white",
+				"usingComponents": {
+					"van-button": "/wxcomponents/vant/button/index",
+					"van-divider": "/wxcomponents/vant/divider/index",
+					"van-row": "/wxcomponents/vant/row/index",
+					"van-col": "/wxcomponents/vant/col/index",
+					"van-icon":"/wxcomponents/vant/icon/index"
+				}
+			}
+			},{
+			"path": "pages/dynamic/index",
+			"style": {
+			
+				"navigationBarTitleText": "动态",
+				"navigationBarBackgroundColor": "#cd128f",
+				"navigationBarTextStyle": "white"
 			}
 		}
 	],
@@ -96,11 +123,15 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#d72323"
+		
 	},
 	"easycom": {
 		"autoscan": true,
 		"custom": {
-			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+			
+
 		}
 	}
+	
 }
