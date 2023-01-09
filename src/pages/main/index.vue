@@ -76,19 +76,19 @@
           </uni-row>
         </template>
         <image style="width: 100%;" :src="cover"></image>
-        <text class="uni-body uni-mt-5">卡片组件通用来显示完整独立的一段信息，同时让用户理解他的作用。例如一篇文章的预览图、作者信息、时间等，卡片通常是更复杂和更详细信息的入口点。</text>
+        <text class="uni-body uni-mt-5">清水本不动，桃花发岸傍。桃花弄水色，波荡摇春光。我悦子容艳，子倾我文章。风吹绿琴去，曲度紫鸳鸯。昔作一水鱼，今成两枝鸟。哀哀长鸡鸣，夜夜达五晓。起折相思树，归赠知寸心。覆水不可收，行云难重寻。天涯有度鸟，莫绝瑶华音。</text>
         <view slot="actions" class="card-actions">
           <view class="card-actions-item" @click="actionsClick('分享')">
             <uni-icons type="redo" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">分享</text>
+            <text class="card-actions-item-text">分享(1314)</text>
           </view>
           <view class="card-actions-item" @click="actionsClick('点赞')">
             <uni-icons type="heart" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">点赞</text>
+            <text class="card-actions-item-text">点赞(520)</text>
           </view>
           <view class="card-actions-item" @click="actionsClick('评论')">
             <uni-icons type="chatbubble" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">评论</text>
+            <text class="card-actions-item-text">评论(888)</text>
           </view>
         </view>
       </uni-card>
@@ -119,19 +119,19 @@
           </uni-row>
         </template>
         <image style="width: 100%;" :src="cover"></image>
-        <text class="uni-body uni-mt-5">卡片组件通用来显示完整独立的一段信息，同时让用户理解他的作用。例如一篇文章的预览图、作者信息、时间等，卡片通常是更复杂和更详细信息的入口点。</text>
+        <text class="uni-body uni-mt-5">窈窕淑女，君子好逑。古书之道，岂敢不从。吾虽不得领悟，但也明其大 意，况有佳人在此，怎不受教，若不此举，待到大彻大悟之时，岂不悲哉。待到落花似散， 落霞孤影，思之，只怕令吾来思，人去楼空，回首恨依。</text>
         <view slot="actions" class="card-actions">
           <view class="card-actions-item" @click="actionsClick('分享')">
             <uni-icons type="redo" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">分享</text>
+            <text class="card-actions-item-text">分享(1314)</text>
           </view>
           <view class="card-actions-item" @click="actionsClick('点赞')">
             <uni-icons type="heart" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">点赞</text>
+            <text class="card-actions-item-text">点赞(520)</text>
           </view>
           <view class="card-actions-item" @click="actionsClick('评论')">
             <uni-icons type="chatbubble" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">评论</text>
+            <text class="card-actions-item-text">评论(888)</text>
           </view>
         </view>
       </uni-card>
@@ -163,19 +163,19 @@
           </uni-row>
         </template>
         <image style="width: 100%;" :src="cover"></image>
-        <text class="uni-body">这是一个带头像和双标题的基础卡片，此示例展示了一个完整的卡片。</text>
+        <text class="uni-body">“千里明月寄相思。”这句话也说不出月光下思念我的你心情如何。长白山渺远，我看不见；所以我更看不见你的境况遭遇。我想知你寒暖。冷了，替你送件衣；病了，为你熬些药。可我只能怀着我一厢情愿，默默怀恋。</text>
         <view slot="actions" class="card-actions">
-          <view class="card-actions-item" @click="actionsClick('分享', 1, 2)">
+          <view class="card-actions-item" @click="actionsClick('分享')">
             <uni-icons type="redo" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">分享</text>
+            <text class="card-actions-item-text">分享(1314)</text>
           </view>
-          <view class="card-actions-item" @click="actionsClick('点赞', 1, 2)">
+          <view class="card-actions-item" @click="actionsClick('点赞')">
             <uni-icons type="heart" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">点赞</text>
+            <text class="card-actions-item-text">点赞(520)</text>
           </view>
-          <view class="card-actions-item" @click="actionsClick('评论', 1, 2)">
+          <view class="card-actions-item" @click="actionsClick('评论')">
             <uni-icons type="chatbubble" size="18" color="#999"></uni-icons>
-            <text class="card-actions-item-text">评论</text>
+            <text class="card-actions-item-text">评论(888)</text>
           </view>
         </view>
       </uni-card>
@@ -267,7 +267,7 @@ export default {
         iconColor: '#fff',
       },
       cover: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
-      avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png',
+      avatar: 'https://flipped.lncios.cn/queqiao-active.png',
       statusBarHeight: uni.getStorageSync('menuInfo').statusBarHeight,//状态栏的高度（可以设置为顶部导航条的padding-top）
       menuWidth: uni.getStorageSync('menuInfo').menuWidth,
       menuHeight: uni.getStorageSync('menuInfo').menuHeight,

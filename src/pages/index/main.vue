@@ -89,47 +89,47 @@ export default {
 
 
       topics: [[{
-        url: "https://flipped.lncios.cn/xiangcun.jpg",
+        url: "https://flipped.lncios.cn/queqiao-active.png",
         id: "1",
         topicName: "而立之年"
       }, {
-        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/queqiao.png",
         id: "2"
         ,
         topicName: "春节相亲"
       }, {
-        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/queqiao-active.png",
         id: "3"
         ,
-        topicName: "话题3"
+        topicName: "放假了吗"
       }, {
-        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/queqiao.png",
 
-        topicName: "话题4"
+        topicName: "鱼塘"
       }, {
-        url: "https://flipped.lncios.cn/xiaoyuan.jpg",
+        url: "https://flipped.lncios.cn/queqiao-active.png",
 
-        topicName: "话题5"
+        topicName: "舔狗的救赎"
       }],
       [{
-        url: "https://flipped.lncios.cn/add.png",
+        url: "https://flipped.lncios.cn/queqiao-active.png",
         id: "2-1",
-        topicName: ""
+        topicName: "鱼塘"
       }, {
-        url: "https://flipped.lncios.cn/add.png",
+        url: "https://flipped.lncios.cn/queqiao.png",
         id: "2-2",
-        topicName: ""
+        topicName: "放假了吗"
       }, {
-        url: "https://flipped.lncios.cn/add.png",
+        url: "https://flipped.lncios.cn/queqiao-active.png",
         id: "2-3",
-        topicName: ""
+        topicName: "春节相亲"
       }, {
-        url: "https://flipped.lncios.cn/add.png", id: "4",
-        topicName: ""
+        url: "https://flipped.lncios.cn/queqiao.png", id: "4",
+        topicName: "舔狗的救赎"
       }, {
-        url: "https://flipped.lncios.cn/add.png", id: "4"
+        url: "https://flipped.lncios.cn/queqiao-active.png", id: "4"
         ,
-        topicName: "话题5"
+        topicName: "而立之年"
       }]
       ],
       //grid
@@ -157,6 +157,28 @@ export default {
     return false
   },
   methods: {
+    onShareAppMessage() {
+    const promise = new Promise(resolve => {
+      setTimeout(() => {
+        resolve({
+          title: '鹊情书'
+        })
+      }, 2000)
+    })
+    return {
+      title: '鹊桥情书',
+      path: '/page/index/main',
+      promise 
+    }
+  
+  },
+  onShareTimeline(){
+     return {  title:"鹊桥情书",
+       query:'/page/index/main',
+       imageUrl:"https://flipped.lncios.cn/queqiao-active.png"
+
+  }
+    },
     clickItem(e) {
       this.swiperDotIndex = e
     },

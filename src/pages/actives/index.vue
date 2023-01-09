@@ -5,7 +5,7 @@
         <van-divider
           hairline
           contentPosition="center"
-          customStyle="margin-top:0;color: #1989fa; border-color: #1989fa; font-size: 16px;"
+          customStyle="margin-top:0;color: #cd128f; border-color: #cd128f; font-size: 16px;"
           >实时签到人员(滚动)</van-divider
         >
       </view>
@@ -30,7 +30,7 @@
         <van-divider
           hairline
           contentPosition="center"
-          customStyle="margin-top:0;color: #1989fa; border-color: #1989fa; font-size: 16px;"
+          customStyle="margin-top:0;color: #cd128f; border-color: #cd128f; font-size: 16px;"
           >活动相关
         </van-divider>
       </view>
@@ -57,7 +57,7 @@
         <van-divider
           hairline
           contentPosition="center"
-          customStyle="margin-top:0; color: #1989fa; border-color: #1989fa; font-size: 16px;"
+          customStyle="margin-top:0; color: #cd128f; border-color: #cd128f; font-size: 16px;"
           >参与签到
         </van-divider>
       </view>
@@ -92,7 +92,7 @@
         <van-divider
           hairline
           contentPosition="center"
-          customStyle="margin-top:0;color: #1989fa; border-color: #1989fa; font-size: 16px;"
+          customStyle="margin-top:0;color: #cd128f; border-color: #cd128f; font-size: 16px;"
           >活动地址</van-divider
         >
       </view>
@@ -132,7 +132,7 @@ export default {
     url: '../activity/join/join'
   },
   {
-    text: '报名人数',
+    text: '报名人数(80)',
     icon: 'award-o',
     color: '#1989fa',
     bg: 'blue',

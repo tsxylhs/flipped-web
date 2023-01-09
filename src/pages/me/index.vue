@@ -19,19 +19,19 @@
             </view>
           </uni-row>
         </uni-col>
-        <button type="default"
-          style="margin-top: 20px; color: white; background-color: transparent; border: 0px; opacity: 0.8;font: 0.2em sans-serif;">编辑</button>
+        <!-- <button type="default"
+          style="margin-top: 20px; color: white; background-color: transparent; border: 0px; opacity: 0.8;font: 0.2em sans-serif;">编辑</button> -->
       </uni-row>
       <view>
         <uni-grid :column="4" :highlight="false" @change="change" :showBorder="false" :square="false">
           <uni-grid-item v-for="(item, index) in list" :index="index" :key="index">
-            <view style="background-color: transparent;  ">
+            <view style="background-color: transparent;  " >
               <uni-row :gutter="gutter" :width="nvueWidth">
                 <image style="margin-left: 35%; margin-top: 20%; height: 40px;width: 40px;" :src="item.url">
                 </image>
               </uni-row>
               <uni-row :gutter="gutter" :width="nvueWidth">
-                <text style="text-align:center; margin-left: 34%; color:white; font-size: 12px;">{{ item.text }}</text>
+                <text style="text-align:center; margin-left: 30%; color:white; font-size: 12px;">{{ item.text }}</text>
               </uni-row>
             </view>
           </uni-grid-item>
@@ -44,9 +44,8 @@
       <uni-section title="常用功能" type="line" padding>
         <uni-grid :showBorder="false" :column="3" :square="true" :highlight="false" @change="change">
           <uni-grid-item v-for="(item, index) in list1" :index="index" :key="index">
-            <view class="grid-item-box">
-              <image style="height: 40px; width: 40px;"
-                :src="item.url"></image>
+            <view class="grid-item-box" @click="choose(item)">
+              <image style="height: 40px; width: 40px;" :src="item.url"></image>
               <text class="textm">{{ item.text }}</text>
             </view>
           </uni-grid-item>
@@ -65,43 +64,55 @@ export default {
   data() {
     return {
       cover: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
-      avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png',
+      avatar: 'https://flipped.lncios.cn/queqiao-active.png',
       list: [{
         url: "https://flipped.lncios.cn/guanzhu1.png",
-        text: "我的关注"
+        text: "舔狗(100)"
       }, {
         url: "https://flipped.lncios.cn/guanzhu.png",
-        text: "关注我的"
+        text: "倾心(12)"
       }, {
         url: "https://flipped.lncios.cn/laifang.png",
-        text: "最近来访"
+        text: "来访(+10)"
       }, {
-        url: "https://flipped.lncios.cn/wanshan.png",
-        text: "完善信息"
+        url: "/static/zan.png",
+        text: "点赞(+120)"
       }],
       list1: [{
+        id: "1",
         url: 'https://flipped.lncios.cn/shiming.png',
         text: '实名认证',
         badge: '0',
         type: "primary"
       },
       {
+        id: "1",
         url: 'https://flipped.lncios.cn/dongtai.png',
         text: '我的动态',
         badge: '1',
         type: "success"
       },
       {
+        id: "1",
+        url: 'https://flipped.lncios.cn/wanshan.png',
+        text: '信息完善',
+        badge: '1',
+        type: "success"
+      },
+      {
+        id: "1",
         url: 'https://flipped.lncios.cn/gongzhonghao.png',
         text: '公众号',
         badge: '99',
         type: "warning"
       },
       {
+        id: "1",
         url: 'https://flipped.lncios.cn/huodong.png',
         text: '活动报名'
       },
       {
+        id: "1",
         url: 'https://flipped.lncios.cn/yingyong.png',
         text: '应用声明'
       },
@@ -110,6 +121,7 @@ export default {
         text: '服务与帮助'
       },
       {
+        id: "1",
         url: 'https://flipped.lncios.cn/shezhi.png',
         text: '设置',
         badge: '2',
@@ -120,7 +132,20 @@ export default {
     }
   },
   computed: {},
-  methods: {},
+  methods: {
+    choose(item) {
+      console.log(item.id);
+      switch (item.id) {
+        case "1":
+          uni.navigateTo({
+            url: "/pages/actives/index?type=1",
+            animationType: 'fade-in',
+            animationDuration: 200
+          })
+          break;
+      }
+    }
+  },
   watch: {},
 
   // 页面周期函数--监听页面加载

@@ -37,7 +37,7 @@
             </uni-col>
           </uni-row>
         </template>
-        <image style="width: 100%;" :src="cover"></image>
+       
         <text class="uni-body uni-mt-5">而立之年不啻过，十分减尽少年豪。吃它官饭如何稳，着了朝衫说甚高。
 勤向溪山供日课，剩栽花木足年劳。客来不周嗟无肉，菜本新添数百窠。</text>
         <view slot="actions" class="card-actions">
@@ -124,7 +124,7 @@ export default {
   data() {
     return {
       cover: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/094a9dc0-50c0-11eb-b680-7980c8a877b8.jpg',
-      avatar: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png',
+      avatar: 'https://flipped.lncios.cn/queqiao-active.png',
        active:{
         participate:"2023",
         text:"而立之年，你有什么遗憾",
