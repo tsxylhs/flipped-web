@@ -1,5 +1,5 @@
 <template >
-  <view class="container">
+  <view  class="container">
 
     <!--轮播图-->
 
