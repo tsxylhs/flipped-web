@@ -2,7 +2,7 @@
   <view style="background-image: linear-gradient(to bottom, #DcDCdc,#cd128f);">
     <view
       style=" height: 43vh; padding-top: 3px; width: 82vw; margin-left: 9vw;  border-radius: 170px 170px 170px 170px">
-      <cover-image style="  border-radius: 170px 170px 170px 170px" src="https://flipped.lncios.cn/xiaoyuan.jpg"
+      <image style="height: 43vh;  border-radius: 170px 170px 170px 170px" src="https://flipped.lncios.cn/xiaoyuan.jpg"
         mode="aspectFill" />
     </view>
     <view style="height: 55vh; margin-top: 10px;">
@@ -166,6 +166,11 @@ export default {
         iconColor: '#fff',
       },
       content: [{
+        iconPath: '/static/xiayige.png',
+        selectedIconPath: '/static/xiayige.png',
+        text: '下一个',
+        active: false
+      },{
         iconPath: '/static/xihuan.png',
         selectedIconPath: '/static/xihuan.png',
         text: '喜欢',
