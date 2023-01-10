@@ -5,7 +5,7 @@
         <view class="chat-ls" v-for="(item, index) in unshiftmsg" :key="index" :id="'msg' + index">
           <view class="chat-time" v-if="item.createTime != ''">{{ changeTime(item.createTime) }}</view>
           <view class="msg-m msg-left" v-if="item.sendName == friendName">
-            <image @click="getMessage(item.sendName,'showLeft')" class="user-img" src="../../../static/queqiao-active.png"></image>
+            <image @click="getMessage(item.sendName,'showLeft')" class="user-img" src="../../static/queqiao-active.png"></image>
             <view>
               <uni-row>
                 <view>{{ item.sendName }}</view>
@@ -22,7 +22,7 @@
                 <view class="message" v-if="item.TextType == 2" @tap="playVoice(item.sendText.voice)">
                   <!-- 音频 -->
                   <view class="msg-text voice" :style="{ width: item.sendText.time * 4 + 'rpx' }">
-                    <image src="../../../static/yuyin1.png" class="voice-img"></image>
+                    <image src="../../static/yuyin1.png" class="voice-img"></image>
                     {{ item.sendText.time }}″
                   </view>
                 </view>
@@ -41,7 +41,7 @@
 
           </view>
           <view class="msg-m msg-right" v-if="item.sendName != friendName">
-            <image class="user-img" src="../../../static/queqiao-active.png"></image>
+            <image class="user-img" src="../../static/queqiao-active.png"></image>
             <view class="message" v-if="item.TextType == 0">
               <view class="msg-text">{{ item.sendText }}</view>
             </view>
@@ -52,7 +52,7 @@
               <!-- 音频 -->
               <view class="msg-text voice" :style="{ width: item.sendText.time * 4 + 'rpx' }">
                 {{ item.sendText.time }}″
-                <image src="../../../static/yuyin1.png" class="voice-img"></image>
+                <image src="../../static/yuyin1.png" class="voice-img"></image>
               </view>
             </view>
             <view class="message" v-if="item.TextType == 3" @tap="openLocation(item.sendText)">

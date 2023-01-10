@@ -6,8 +6,8 @@
       <image class="image-radius" :src="active.url" mode="aspectFill" />
     </view>
     <uni-section title="2023人参与" type="line"></uni-section>
-    <view style="height: 80vh;">
-      <scroll-view style="height: 80vh;" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
+    <view style="height: 70vh;">
+      <scroll-view style="height: 70vh;" scroll-y="true" refresher-enabled="true" :refresher-triggered="triggered"
       :refresher-threshold="100" refresher-background="lightgreen" @refresherpulling="onPulling"
       @refresherrefresh="onRefresh" @refresherrestore="onRestore" @refresherabort="onAbort">
 

@@ -3,8 +3,8 @@
 		<view class="submit">
 			<view class="submit-chat">
 				<view class="bt-img" @tap="records">
-					<image v-if="isrecord" src="../../../static/yuyin.png"></image>
-					<image v-else src="../../../static/wenzishuru.png"></image>
+					<image v-if="isrecord" src="/static/yuyin.png"></image>
+					<image v-else src="/static/wenzishuru.png"></image>
 				</view>
 				<!-- 文本框 -->
 				<textarea auto-height="true" class="chat-send btn" :class="{ displaynone: isrecord }" @input="inputs"
@@ -14,23 +14,23 @@
 					按住说话
 				</view>
 				<view class="bt-img" @tap="emoji">
-					<image src="../../../static/biaoqing.png"></image>
+					<image src="/static/biaoqing.png"></image>
 				</view>
 				<view class="bt-img" @tap="more">
-					<image src="../../../static/qita.png"></image>
+					<image src="/static/qita.png"></image>
 				</view>
 				<view v-if="isNiming" class="bt-img" @tap="niming">
-					<image src="../../../static/niming-active.png"></image>
+					<image src="/static/niming-active.png"></image>
 				</view>
 				<view v-if="!isNiming" class="bt-img" @tap="niming">
-					<image src="../../../static/niming.png"></image>
+					<image src="/static/niming.png"></image>
 				</view>
 			</view>
 			<!-- 表情 -->
 			<view class="emoji" :class="{ displaynone: !isemoji }">
 				<view class="emoji-send">
 					<view class="emoji-send-det" @tap="emojiBack">
-						<image src="../../../static/shanchu.png"></image>
+						<image src="/static/shanchu.png"></image>
 					</view>
 					<view class="emoji-send-bt" @tap="emojiSend">发送</view>
 				</view>
@@ -38,27 +38,27 @@
 			<!-- 更多 -->
 			<view class="more" :class="{ displaynone: !ismore }">
 				<view class="more-list" @tap="sendImg('album')">
-					<image src="../../../static/tupian.png"></image>
+					<image src="/static/tupian.png"></image>
 					<view class="more-list-title">图片</view>
 				</view>
 				<view class="more-list" @tap="sendImg('camera')">
-					<image src="../../../static/xiangji.png"></image>
+					<image src="/static/xiangji.png"></image>
 					<view class="more-list-title">拍照</view>
 				</view>
 				<view class="more-list" @tap="choseLocation">
-					<image src="../../../static/dingwei1.png"></image>
+					<image src="/static/dingwei1.png"></image>
 					<view class="more-list-title">定位</view>
 				</view>
 				<view class="more-list">
-					<image src="../../../static/shipin.png"></image>
+					<image src="/static/shipin.png"></image>
 					<view class="more-list-title">视频</view>
 				</view>
 				<view class="more-list">
-					<image src="../../../static/wenjianjia.png"></image>
+					<image src="/static/wenjianjia.png"></image>
 					<view class="more-list-title">文件</view>
 				</view>
 				<view class="more-list">
-					<image src="../../../static/fanwei.png"></image>
+					<image src="/static/fanwei.png"></image>
 					<view class="more-list-title">范围过滤</view>
 				</view>
 			</view>
@@ -118,10 +118,10 @@ export default {
 			}, 10)
 			if (this.isrecord) {
 				this.isrecord = false;
-				this.toc = require("../../static/icon/allorder.png");
+				this.toc = require("/static/icon/allorder.png");
 			} else {
 				this.isrecord = true;
-				this.toc = require("../../static/icon/wechat.png");
+				this.toc = require("/static/icon/wechat.png");
 			}
 		},
 		// 表情
@@ -211,7 +211,7 @@ export default {
 			//切换的时候关闭其他界面
 			this.isemoji = false
 			this.isrecord = false;
-			this.toc = require("../../static/icon/allorder.png");
+		
 			setTimeout(() => {
 				this.getElementHeight();
 			}, 10)
